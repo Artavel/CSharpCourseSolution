@@ -11,6 +11,38 @@ namespace C_ArraysCollections
             
         }
 
+        static void JaggetArray()
+        {
+            int[][] jaggetArray = new int[4][];
+            jaggetArray[0] = new int[1];
+            jaggetArray[1] = new int[3];
+            jaggetArray[2] = new int[2];
+            jaggetArray[3] = new int[4];
+
+            Console.WriteLine("Enter the number for a jagged array.");
+
+            for (int i = 0; i < jaggetArray.Length; i++)
+            {
+                for (int j = 0; j < jaggetArray[i].Length; j++)
+                {
+                    string st = Console.ReadLine();
+                    jaggetArray[i][j] = int.Parse(st);
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Printing the Elements");
+
+            for (int i = 0; i < jaggetArray.Length; i++)
+            {
+                for (int j = 0; j < jaggetArray[i].Length; j++)
+                {
+                    Console.Write(jaggetArray[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
         static void MultidimArrays()
         {
             int[,] r1 = new int[2, 3] { { 1, 2, 3 }, { 4, 5, 6 } };
