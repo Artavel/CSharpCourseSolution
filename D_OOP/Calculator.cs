@@ -6,6 +6,17 @@ namespace D_OOP
 {
     public class Calculator
     {
+        public bool TryDivide(double divisible, double divisor, out double result)
+        {
+            result = 0;
+            if(divisor == 0)
+            {
+                return false;
+            }
+            result = divisible / divisor;
+            return true;
+        }
+
         public double Average(params int[] numbers)
         {
             int sum = 0;
@@ -22,6 +33,7 @@ namespace D_OOP
             double p = (a + b + c) / 2;
             return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
+
         public double CalcTriangleSquare(double b, double h, int alpha)
         {
             double rads = alpha * Math.PI / 180;

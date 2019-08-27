@@ -7,9 +7,30 @@ namespace D_OOP
         static void Main(string[] args)
         {
             Calculator calc = new Calculator();
-            double avg = calc.Average(1, 2, 3, 4);
 
-            Console.WriteLine(avg);
+            if (calc.TryDivide(10, 2, out double result))
+            {
+                Console.WriteLine(result);
+            }
+            else
+            {
+                Console.WriteLine("Failed to divide");
+            }
+            Console.ReadLine();
+
+
+            Console.WriteLine("Enter a number, please.");
+
+            string line = Console.ReadLine();
+            bool wasParsed = int.TryParse(line, out int number);
+            if (wasParsed)
+            {
+                Console.WriteLine(number);
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
         }
     }
 }
