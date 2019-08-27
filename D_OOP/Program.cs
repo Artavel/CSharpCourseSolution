@@ -6,7 +6,10 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Caracter c = new Caracter();
+            c.Hit(120);
+
+            Console.WriteLine(c.Health);
         }
     }
 }
