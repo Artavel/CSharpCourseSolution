@@ -11,6 +11,29 @@ namespace C_ArraysCollections
             
         }
 
+        static void ArrayFromOne()
+        {
+            Array myArray = Array.CreateInstance(typeof(int), new[] { 4 }, new[] { 1 });
+            myArray.SetValue(2019, 1);
+            myArray.SetValue(2019, 2);
+            myArray.SetValue(2019, 3);
+            myArray.SetValue(2019, 4);
+
+            Console.WriteLine($"Starting index:{myArray.GetLowerBound(0)}");
+            Console.WriteLine($"Ending index: {myArray.GetUpperBound(0)}");
+
+            for (int i = myArray.GetLowerBound(0); i <= myArray.GetUpperBound(0); i++)
+            {
+                Console.WriteLine($"{myArray.GetValue(i)} at index {i}");
+            }
+            Console.WriteLine();
+            //or that
+            for (int i = 1; i < 5; i++)
+            {
+                Console.WriteLine($"{myArray.GetValue(i)} at index {i}");
+            }
+        }
+
         static void JaggetArray()
         {
             int[][] jaggetArray = new int[4][];
