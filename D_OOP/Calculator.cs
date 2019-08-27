@@ -4,9 +4,9 @@ using System.Text;
 
 namespace D_OOP
 {
-    public class Calculator
+    public static class Calculator
     {
-        public bool TryDivide(double divisible, double divisor, out double result)
+        public static bool TryDivide(double divisible, double divisor, out double result)
         {
             result = 0;
             if(divisor == 0)
@@ -17,7 +17,7 @@ namespace D_OOP
             return true;
         }
 
-        public double Average(params int[] numbers)
+        public static double Average(params int[] numbers)
         {
             int sum = 0;
             
@@ -28,16 +28,28 @@ namespace D_OOP
             return (double)sum / numbers.Length;
         }
 
-        public double CalcTriangleSquare(double a, double b, double c)
+        public static double CalcTriangleSquare(double a, double b, double c)
         {
             double p = (a + b + c) / 2;
             return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
 
-        public double CalcTriangleSquare(double b, double h, int alpha)
+        public static double CalcTriangleSquare(double b, double h, int alpha, bool isInRadians = false)
         {
-            double rads = alpha * Math.PI / 180;
-            return 0.5 * b * h * Math.Sin(rads);
+            if (isInRadians)
+            {
+                return 0.5 * b * h * Math.Sin(alpha);
+            }
+            else
+            {
+                double rads = alpha * Math.PI / 180;
+                return 0.5 * b * h * Math.Sin(rads);
+            }
         }
+        //public static double CalcTriangleSquare(double b, double h, int alpha)
+        //{
+        //        double rads = alpha * Math.PI / 180;
+        //        return 0.5 * b * h * Math.Sin(rads);
+        //}
     }
 }
