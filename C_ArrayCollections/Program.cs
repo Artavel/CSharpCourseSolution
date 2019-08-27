@@ -8,7 +8,8 @@ namespace C_ArraysCollections
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine(RomanNumeral.Parse(Console.ReadLine()));
+            Console.ReadLine();
         }
 
         static void ArrayFromOne()
