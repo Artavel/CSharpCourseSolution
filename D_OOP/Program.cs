@@ -7,10 +7,9 @@ namespace D_OOP
         static void Main(string[] args)
         {
             Calculator calc = new Calculator();
-            //double square1 = calc.CalcTriangleSquare(10, 20);
-            double square2 = calc.CalcTriangleSquare(15, 40, 20);
+            double avg = calc.Average(1, 2, 3, 4);
 
-            Console.WriteLine($"Square2 = {square2}");
+            Console.WriteLine(avg);
         }
     }
 }
