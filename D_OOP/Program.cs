@@ -7,7 +7,8 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
-            
+            Caracter c = new Caracter("Elf");
+            Console.WriteLine(c.Race);
         }
 
         static void Boxing_Unboxing()
