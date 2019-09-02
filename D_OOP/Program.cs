@@ -7,8 +7,10 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
-            Caracter c = new Caracter("Elf");
-            Console.WriteLine(c.Race);
+            ModelXTerminal terminal = new ModelXTerminal("123");
+            terminal.Connect();
+
+            Console.ReadLine();
         }
 
         static void Boxing_Unboxing()
