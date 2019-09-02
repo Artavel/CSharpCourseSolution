@@ -21,7 +21,8 @@ namespace D_OOP
 
     public class Caracter
     {
-        public int Health { get; private set; } = 100;
+        private readonly int speed = 10;
+        public int Health { get; set; } = 100;
 
         public string Race { get; private set; }
         public int Armor { get; private set; }
@@ -36,6 +37,13 @@ namespace D_OOP
             Race = race;
             Armor = armor;
         }
+
+        //public Caracter(string race, int armor, int speed)
+        //{
+        //    Race = race;
+        //    Armor = armor;
+        //    this.speed = speed;
+        //}
 
         public void Hit(int damage)
         {
