@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace D_OOP
 {
@@ -6,43 +7,40 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
-            EvilStruct es1 = new EvilStruct();
-            es1.PointRef = new PointRef() { X = 1, Y = 2 };
-            //es1.PointRef.X = 1;
-            //es1.PointRef.Y = 2;
-            EvilStruct es2 = es1;
+            int a = 1;
+            int b = 2;
 
-            Console.WriteLine($"es1.PointRef.X = {es1.PointRef.X}, es1.PointRef.Y = {es1.PointRef.Y}");
-            Console.WriteLine($"es2.PointRef.X = {es2.PointRef.X}, es2.PointRef.Y = {es2.PointRef.Y}");
+            Swap(ref a, ref b);
 
-            es2.PointRef.X = 42;
-            es2.PointRef.Y = 45;
+            Console.WriteLine($"a={a}, b={b}");
 
             Console.ReadLine();
 
-            PointVal a; //same as PointVal a = new PointVal();
-            a.X = 3;
-            a.Y = 5;
+            var list = new List<int>();
+            AddNumbers(list);
 
-            PointVal b = a; 
-            b.X = 7;
-            b.Y = 10;
+            foreach(var item in list)
+            {
+                Console.WriteLine(item);
+            }
+        }
 
-            a.LogValues();
-            b.LogValues();
+        static void Swap(ref int a, ref int b)
+        {
+            Console.WriteLine($"Original a={a}, b={b}");
 
-            Console.WriteLine("After structs");
+            int tmp = a;
+            a = b;
+            b = tmp;
 
-            PointRef c = new PointRef();
-            c.X = 3;
-            c.Y = 5;
+            Console.WriteLine($"Swapped a={a}, b={b}");
+        }
 
-            PointRef d = c;
-            d.X = 7;
-            d.Y = 10;
-
-            c.LogValues();
-            d.LogValues();
+        static void AddNumbers(List<int> numbers)
+        {
+            numbers.Add(1);
+            numbers.Add(2);
+            numbers.Add(3);
         }
     }
 }
