@@ -7,6 +7,26 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
+            PointVal? pv = null;
+            if (pv.HasValue)
+            {
+                PointVal pv2 = pv.Value;
+                Console.WriteLine(pv.Value.X);
+                Console.WriteLine(pv2.X);
+            }
+            else
+            {
+                //
+            }
+
+            PointVal pv3 = pv.GetValueOrDefault();
+
+            PointRef c = null;
+            Console.WriteLine(c.X); //NullReferenceException
+        }
+
+        static void PassByRefDemo()
+        {
             int a = 1;
             int b = 2;
 
@@ -19,7 +39,7 @@ namespace D_OOP
             var list = new List<int>();
             AddNumbers(list);
 
-            foreach(var item in list)
+            foreach (var item in list)
             {
                 Console.WriteLine(item);
             }
