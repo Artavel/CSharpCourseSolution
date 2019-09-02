@@ -7,6 +7,50 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
+            
+        }
+
+        static void Boxing_Unboxing()
+        {
+            int x = 1;
+            object obj = x; //boxing
+
+            int y = (int)obj; //unboxing
+
+            double pi = 3.14;
+            object obj1 = pi;
+
+            int number = (int)(double)obj1;
+        }
+
+        static void Do(object obj)
+        {
+            //variant 1
+            bool isPointRef = obj is PointRef;
+            if (isPointRef)
+            {
+                PointRef pr = (PointRef)obj;
+                Console.WriteLine(pr.X);
+            }
+            else
+            {
+                //exception or smth else
+            }
+
+            //variant 2
+            PointRef pr1 = obj as PointRef;
+            if (pr1 != null)
+            {
+                Console.WriteLine(pr1.X);
+            }
+            else
+            {
+                //exception or smth else
+            }
+        }
+
+        static void NRE_NullReferenceException()
+        {
             PointVal? pv = null;
             if (pv.HasValue)
             {
