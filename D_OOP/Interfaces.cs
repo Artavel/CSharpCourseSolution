@@ -10,6 +10,17 @@ namespace D_OOP
         void Remove(object obj);
     }
 
+    public static class BaseCollectionExtention
+    {
+        public static void AddRange(this IBaseCollection collection, IEnumerable<object> objects)
+        {
+            foreach(var item in objects)
+            {
+                collection.Add(item);
+            }
+        }
+    }
+
     public class BaseList : IBaseCollection
     {
         private object[] items;
