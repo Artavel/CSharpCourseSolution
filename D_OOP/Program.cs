@@ -7,7 +7,35 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
+           var ms = new MyStack<int>();
+            ms.Push(1);
+            ms.Push(2);
+            ms.Push(3);
 
+            foreach(var item in ms)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadLine();
+
+            while (ms.Count != 0)
+            {
+                Console.WriteLine(ms.Peek());
+                ms.Pop();
+            }
+
+            Console.WriteLine(ms.Peek());
+
+            ms.Pop();
+
+            Console.WriteLine(ms.Peek());
+
+            ms.Push(3);
+            ms.Push(4);
+            ms.Push(5);
+
+            Console.WriteLine(ms.Peek());
 
             Console.ReadLine();
         }

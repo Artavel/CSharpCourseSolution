@@ -19,23 +19,23 @@ namespace D_OOP
         }
     }
 
-    public class Caracter
+    public class Character
     {
         private readonly int speed = 10;
         public int Health { get; set; } = 100;
 
-        public string Race { get; private set; }
+        public Race Race { get; private set; }
         public int Armor { get; private set; }
 
-        public Caracter(string race)
+        public Character(Race race)
         {
             Race = race;
         }
 
-        public Caracter(string race, int armor)
+        public Character(Race race, int armor)
         {
             Race = race;
-            Armor = armor;
+            Armor = (int)race;
         }
 
         //public Caracter(string race, int armor, int speed)
