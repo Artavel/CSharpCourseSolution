@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DzComplex", "DzComplex\DzCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DzFindMyNumber", "DzFindMyNumber\DzFindMyNumber.csproj", "{BF9C145D-96DA-49AE-B083-B798726EF81D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XOXOGame", "XOXOGame\XOXOGame.csproj", "{E53A23B1-F28A-4538-9AC9-7E72A75F9D05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BF9C145D-96DA-49AE-B083-B798726EF81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF9C145D-96DA-49AE-B083-B798726EF81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF9C145D-96DA-49AE-B083-B798726EF81D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53A23B1-F28A-4538-9AC9-7E72A75F9D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53A23B1-F28A-4538-9AC9-7E72A75F9D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53A23B1-F28A-4538-9AC9-7E72A75F9D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53A23B1-F28A-4538-9AC9-7E72A75F9D05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
