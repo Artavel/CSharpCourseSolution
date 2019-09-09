@@ -16,7 +16,44 @@ namespace E_Exceptions
     {
         static void Main(string[] args)
         {
-            
+            try
+            {
+                DirFileDemo();
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+
+        static void DirFileDemo()
+        {
+            File.Copy("test.txt", "test_copy.txt", overwrite: true);
+
+            File.Move("test_copy.txt", "test_copy_renamed.txt");
+
+            File.Delete("test_copy.txt");
+
+            if(File.Exists("test.txt"))
+            {
+                File.AppendAllText("test.txt", "bla");
+            }
+
+            File.Replace("test_2.txt", "test_3.txt", "test_backup.txt");
+
+            bool existsDir = Directory.Exists(@"C:\tmp");
+            if(existsDir)
+            {
+                var files = Directory.EnumerateFiles(@"C:\tmp", "*.txt", SearchOption.AllDirectories);
+                foreach (var file in files)
+                {
+                    Console.WriteLine(file);
+                }
+            }
+
+            //Directory.Delete();
+
+            //string fullPath = Path.Combine(@"C:\tmp", "\\bla", "file.txt");
         }
 
         static void FileDemo()
