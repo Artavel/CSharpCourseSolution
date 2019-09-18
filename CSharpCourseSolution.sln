@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DzFindMyNumber", "DzFindMyN
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XOXOGame", "XOXOGame\XOXOGame.csproj", "{E53A23B1-F28A-4538-9AC9-7E72A75F9D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangmanGame", "HangmanGame\HangmanGame.csproj", "{283DA751-2341-46F2-816A-BB6FFF902D50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HangmanGame", "HangmanGame\HangmanGame.csproj", "{283DA751-2341-46F2-816A-BB6FFF902D50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F_Delegations", "LINQ\F_Delegations.csproj", "{E63C5FD7-3DF2-4971-9CBD-3B99B813B439}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{283DA751-2341-46F2-816A-BB6FFF902D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{283DA751-2341-46F2-816A-BB6FFF902D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{283DA751-2341-46F2-816A-BB6FFF902D50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E63C5FD7-3DF2-4971-9CBD-3B99B813B439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E63C5FD7-3DF2-4971-9CBD-3B99B813B439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E63C5FD7-3DF2-4971-9CBD-3B99B813B439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E63C5FD7-3DF2-4971-9CBD-3B99B813B439}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
