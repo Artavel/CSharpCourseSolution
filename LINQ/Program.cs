@@ -1,54 +1,55 @@
 ﻿using F_Delegations.Sticks;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Timers;
 
 namespace F_Delegations
 {
+
     class Program
     {
         static void Main(string[] args)
         {
-            var game = new SticksGame(10, Player.Human);
-            game.MachinePlayed += Game_MachinePlayed;
-            game.HumanTurnToMakeMove += Game_HumanTurnToMakeMove;
-            game.EndOfGame += Game_EndOfGame;
+            LinqDemo("Top100ChessPlayers.csv");
 
-            game.Start();
+            Console.ReadLine();
         }
 
-        private static void Game_MachinePlayed(int sticksTaken)
+        static void LinqDemo(string file)
         {
-            Console.WriteLine($"Computer took: {sticksTaken}");
-        }
+            //var lines = File.ReadAllLines(file);
+            IEnumerable<ChessPlayer> list = File.ReadAllLines(file)
+                                         .Skip(1)
+                                         .Select(ChessPlayer.ParseFideCsv)
+                                         .Where(player => player.BirthYear > 1988)
+                                         .OrderByDescending(player => player.Rating)
+                                         .ThenBy(player => player.Country)
+                                         .Take(10);
+            //.ToList();
 
-        private static void Game_EndOfGame(Player player)
-        {
-            Console.WriteLine($"Winner: {player}");
-        }
+            Console.WriteLine($"The lowest rating in TOP 10: {list.Min(x => x.Rating)}");
+            Console.WriteLine($"The highest rating in TOP 10: {list.Max(x => x.Rating)}");
+            Console.WriteLine($"The average rating in TOP 10: {list.Average(x => x.Rating)}");
 
-        private static void Game_HumanTurnToMakeMove(object sender, int remainingSticks)
-        {
-            Console.WriteLine($"Remaining sticks: {remainingSticks}");
-            Console.WriteLine("Take some sticks");
+            Console.WriteLine(list.First());
+            Console.WriteLine(list.Last());
 
-            bool takenCorrectly = false;
-            while (!takenCorrectly)
+            Console.WriteLine(list.First(player => player.Country == "USA"));
+            Console.WriteLine(list.Last(player => player.Country == "USA"));
+
+            ChessPlayer firstFromBra = list.FirstOrDefault(player => player.Country == "BRA");
+            if (firstFromBra != null)
             {
-                if (int.TryParse(Console.ReadLine(), out int takenSticks))
-                {
-                    var game = (SticksGame)sender;
-
-                    try
-                    {
-                        game.HumanTakes(takenSticks);
-                        takenCorrectly = true;
-                    }
-                    catch(ArgumentException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                }
+                Console.WriteLine(firstFromBra.LastName);
             }
+            var lastFromBra = list.LastOrDefault(player => player.Country == "BRA");
+
+            Console.WriteLine(list.Single(player => player.Country == "FRA"));
+            Console.WriteLine(list.SingleOrDefault(player => player.Country == "BRA"));
+
+            Console.WriteLine(list.SingleOrDefault(player => player.Country == "USA"));
         }
 
         public class CarArgs : EventArgs
